@@ -71,8 +71,9 @@ function App() {
     setShowDropdown((showDropdown) => !showDropdown);
   }
 
-  function handleUsersShow() {
+  function handleShowUsers() {
     setShowUsers((showUsers) => !showUsers);
+    setShowList((showList) => !showList);
   }
 
   function handleShowList() {
@@ -109,10 +110,8 @@ function App() {
         <p key={nr}>{nr}</p>
       ))}
       <button onClick={handleAddNumbers}>Add Numbers</button>
-      <button onClick={handleUsersShow}>{showUsers ? "Hide User List" : "Show User List"}</button>
-      {showUsers && <UserList users={apiUsers} />}
-      <button onClick={handleShowList}>{showList ? "Hide List Item" : "Show List Item"}</button>
-      {showList && <PostList postItem={apiList} />}
+      <button onClick={handleShowUsers}>{showUsers ? "Show List" : "Show Users"}</button>
+      {showUsers ? <UserList users={apiUsers} /> : <PostList postItem={apiList} />}
     </div>
   );
 }
