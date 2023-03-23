@@ -76,10 +76,6 @@ function App() {
     setShowList((showList) => !showList);
   }
 
-  function handleShowList() {
-    setShowList((showList) => !showList);
-  }
-
   // avem un effect cand se modifica array, sa se modifice si state-ul `pare`
   // cu numarul de elemente pare din array
 
